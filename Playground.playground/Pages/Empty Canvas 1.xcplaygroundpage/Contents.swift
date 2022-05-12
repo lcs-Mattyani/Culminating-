@@ -120,18 +120,26 @@ for _ in 1...6 {
     getToNextArrow()
 }
 //NEW ROW
-t.left(by: 90)
-t.forward(steps: 4 * scale)
-t.left(by: 90)
-t.forward(steps: 30 * scale)
-t.left(by: 180 )
 
-
-for _ in 1...6 {
-    
-    getToNextArrow()
+func movingUp (){
+    t.left(by: 90)
+    t.forward(steps: 4 * scale)
+    t.left(by: 90)
+    t.forward(steps: 30 * scale)
+    t.left(by: 180 )
 }
 
+movingUp()
+
+
+for _ in 1...8 {
+    for _ in 1...6 {
+        getToNextArrow()
+    }
+            
+     movingUp()
+    
+}
 
 
 
