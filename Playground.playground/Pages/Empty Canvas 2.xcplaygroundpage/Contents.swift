@@ -53,7 +53,7 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
 canvas.highPerformance = true
 
-let scale  = 10
+let scale  = 8
 
 //setting up
 
@@ -259,37 +259,45 @@ func LoopRows (){
     
     for _ in 1...4 {
         
-        drawBox()
-        t.penUp()
+        
+        
+        //Creating rows
+        t.penDown()
+        
+        t.left(by: 120)
+        t.forward(steps: 5 * scale)
+        t.left(by: 60)
         t.forward(steps: 5 * scale)
         t.left(by: 60)
         t.forward(steps: 5 * scale)
         t.right(by: 60)
-        t.penDown()
+        t.forward(steps: 5 * scale)
+        t.left(by: 60)
+        t.forward(steps: 5 * scale)
+        t.right(by: 60)
+        t.forward(steps: 5 * scale)
+        t.left(by: 60)
+        t.forward(steps: 5 * scale)
+        t.right(by: 60)
+        t.forward(steps: 5 * scale)
+        t.right(by: 180)
+        
+        for _ in 1...4{
+            drawBox()
+            t.forward(steps: 5 * scale)
+            t.left(by: 60)
+            t.forward(steps: 5 * scale)
+            t.right(by: 60)
+        }
+                
+        
+        
     }
-    
-    //Creating rows
-    t.penDown()
-    
-    t.left(by: 120)
-    t.forward(steps: 5 * scale)
-    t.left(by: 60)
-    t.forward(steps: 5 * scale)
-    t.left(by: 60)
-    t.forward(steps: 5 * scale)
-    t.right(by: 60)
-    t.forward(steps: 5 * scale)
-    t.left(by: 60)
-    t.forward(steps: 5 * scale)
-    t.right(by: 60)
-    t.forward(steps: 5 * scale)
-    t.left(by: 60)
-    t.forward(steps: 5 * scale)
-    t.right(by: 60)
-    t.forward(steps: 5 * scale)
-    t.right(by: 180)
-    
 }
+//making the rest of the rows
+
+LoopRows()
+
 
 
 t.currentPosition()
